@@ -1,0 +1,3 @@
+*.txt
+book/
+__pycache__/
