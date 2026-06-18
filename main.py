@@ -15,10 +15,13 @@ def get_book_text(path: str):
         word_list: list[tuple[str,int]] = word_frequency(contents)
 
         print("--------- Top 10 Word Frequency -------")
-        for i in range(0,11):
-            print(f"{word_list[i][0]} : {word_list[i][1]}")
+        for key, value in word_list[:10]:
+            print(f"{key} : {value}")
 
         print("============= END ===============")
 
+if len(sys.argv) < 2:
+    print("usage: python main.py <file>")
+    sys.exit(1)
 path = sys.argv[1]
 get_book_text(path)
